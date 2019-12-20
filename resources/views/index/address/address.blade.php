@@ -18,28 +18,35 @@
     <form action="login.html" method="get" class="reg-login">
         @csrf
         <div class="lrBox">
-            <div class="lrList"><input type="text" placeholder="收货人" /></div>
-            <div class="lrList"><input type="text" placeholder="详细地址" /></div>
-            <div class="lrList">
+            <div class="lrList"><input type="text" placeholder="收货人" name="consignee"/></div>
+            <div class="lrList"><input type="text" placeholder="详细地址" name="detail_address"/></div>
+
                 <select class="change" name="province">
                     <option>省份/直辖市</option>
                     @foreach($provinceInfo as $v)
                         <option value="{{$v->area_id}}">{{$v->area_name}}</option>
                     @endforeach
                 </select>
-            </div>
-            <div class="lrList">
+
+
                 <select class="change" name="city">
                     <option value="0" selected>市</option>
                 </select>
-            </div>
-            <div class="lrList">
+
+
                 <select class="change" name="area">
                     <option value="0" selected>县/区</option>
                 </select>
+
+            <div class="lrList"><input type="text" placeholder="手机号" name="tel"/></div>
+            <div class="lrList2">
+            div
+                <select name="is_default">
+                    <option value="1" selected>默认</option>
+                    <option value="2">不默认</option>
+                </select>
+
             </div>
-            <div class="lrList"><input type="text" placeholder="手机" /></div>
-            <div class="lrList2"><input type="text" placeholder="设为默认地址" /> <button>设为默认</button></div>
         </div><!--lrBox/-->
         <div class="lrSub">
             <input type="submit" value="保存" />
